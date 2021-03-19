@@ -1,6 +1,6 @@
 # Project-based learning add-ons for Google Classroom and Google Workspace
 
-This monorepo hosts all projects for add-ons to support support an Monorepo for Google Classroom and Google Workspace Add-ons for Project-based Learning
+This monorepo hosts all projects for add-ons to support project-based learning using only Google Classroom and Google Workspace Add-ons
 
 ## What's in here
 
