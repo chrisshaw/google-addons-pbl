@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./dist/index.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        const select = document.createElement('sk-select')
+        select.$set({
+            label: 'Please show me some options',
+            placeholder: 'Testing testing...',
+            options:
+                [
+                    { id: '1', label: 'hmmm', selected: false },
+                    { id: '2', label: 'Mabye?', selected: true }
+                ]
+        })
+        select.addEventListener('selected', ({ detail }) => console.log(detail.value))
+    </script>
+</body>
+
+</html>

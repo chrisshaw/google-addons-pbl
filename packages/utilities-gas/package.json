@@ -1,0 +1,17 @@
+{
+  "name": "gas-utilities",
+  "version": "0.0.1",
+  "description": "Google Apps Script shared utilities",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && cp -r src/** build",
+    "build-dev": "npm run build && cp -R tests build/tests",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Shaw",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.56"
+  }
+}

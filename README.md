@@ -28,7 +28,7 @@ These projects use on configurable Google Docs and Sheets templates. You can mak
 
 ## Development
 
-This repository uses [Lerna](https://github.com/lerna/lerna) to manage packages.
+This repository uses npm Workspaces to manage packages. Run `npm install` from the root to link to other local (hoisted) packages.
 
 ### Build
 

@@ -1,0 +1,24 @@
+{
+  "name": "pbl-storyboard-gas",
+  "version": "0.0.1",
+  "description": "Turn anything into evidence of growth and change.",
+  "main": "build/main.gs",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-et": "cd ../evidence-tracker-gas && npm run build && cp -R build ../storyboard-gas/build/evidence-tracker",
+    "build-ui": "cd ../storyboard-ui-vue && npm run build-gas && cp -R dist ../storyboard-gas/build/ui",
+    "build-src": "cp -r src/** build",
+    "build": "npm run clean && npm run build-et && npm run build-ui && npm run build-src",
+    "push": "npx clasp push",
+    "deploy": "npm run build && npm run push",
+    "build-dev": "npm run build && cp -R dev build/dev",
+    "deploy-dev": "npm run build-dev && npm run push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Shaw",
+  "dependencies": {},
+  "devDependencies": {
+    "@google/clasp": "^2.3.0",
+    "@types/google-apps-script": "0.0.56"
+  }
+}

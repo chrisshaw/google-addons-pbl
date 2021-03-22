@@ -1,0 +1,154 @@
+$mdc-theme-background: #f5f5f6;
+$mdc-typography-font-family: "Roboto", "Montserrat", sans-serif;
+
+@import "vue-mdc-adapter/dist/theme/styles";
+@import "vue-mdc-adapter/dist/layout-app/styles";
+@import "vue-mdc-adapter/dist/typography/styles";
+@import "vue-mdc-adapter/dist/fab/styles";
+@import "vue-mdc-adapter/dist/drawer/styles";
+@import "vue-mdc-adapter/dist/button/styles";
+@import "vue-mdc-adapter/dist/layout-grid/styles";
+@import "vue-mdc-adapter/dist/card/styles";
+@import "vue-mdc-adapter/dist/chips/styles";
+@import "vue-mdc-adapter/dist/tabs/styles";
+
+/*
+Override the all caps button text.
+Bad for readability.
+*/
+.mdc-button {
+	text-transform: none;
+}
+
+.mdc-tab-bar {
+	margin: 0;
+}
+
+.mdc-tab-bar, .mdc-tab {
+	text-transform: none;
+}
+
+.mdc-tab-bar__indicator {
+	bottom: unset;
+	top: 0;
+}
+
+/*
+Override all styles on mdc-chip-set, which we use only
+to quiet Vue down because it wants to use the mixin
+(even though we don't need it)
+*/
+.mdc-chip-set {
+	padding: unset;
+
+}
+
+.mdc-chip-set .mdc-chip {
+	margin: unset;
+}
+
+/*
+Override the top app bar fixed positioning because that's
+a bug and causing problems.
+*/
+.mdc-layout-app .mdc-layout-app--toolbar-wrapper {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+/*
+Override the card actions minimum height hard-coded at 52px.
+*/
+.mdc-card__actions {
+	min-height: unset;
+}
+
+/*
+Override the stupid little bit of padding on card headers
+*/
+.mdc-card__primary .mdc-card__title--large {
+	padding-top: unset;
+}
+
+/*
+Global placeholder animation
+*/
+.placeholder {
+	position: relative;
+  }
+  
+.placeholder::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0;
+	background-color: var(--placeholder-color);
+	height: 100%;
+	/*
+	translate() with % uses the element's sizes
+	
+	Meanwhile, width is based on parent's sizes
+	*/
+	width: 200%;
+	transform: translateX(-50%);
+	background-image: linear-gradient(
+	  -0.27turn,
+	  rgba(255, 255, 255, var(--less-opacity)),
+	  rgba(255, 255, 255, var(--opacity)),
+	  rgba(255, 255, 255, var(--less-opacity))
+	);
+	animation: shine 2s ease-in-out infinite alternate;
+  }
+  
+@keyframes shine {
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+/*
+
+Sidekick-specific app settings 
+
+*/
+:root {
+	--mdc-theme-primary: var(--main-color) !important;
+	--mdc-theme-secondary: var(--secondary-color) !important;
+	--mdc-theme-background-color: var(--background-color);
+	--mdc-theme-text-secondary-on-background: var(--brand-gray) !important;
+	--mdc-theme-text-secondary-on-light: var(--mdc-theme-text-secondary-on-background) !important;
+	--active-color: var(--mdc-theme-secondary);
+	--complete-color: var(--mdc-theme-primary);
+	--placeholder-color: var(--brand-gray, var(--mdc-theme-background-color, #757575)); /* #757575 is the old Sidekick gray */
+	--opacity: 0.88;
+	--overlay-strength: var(--opacity);
+	--stroke-increment: 0.1rem;
+	--padding-increment: 0.4rem;
+	--border-radius: 0.75rem;
+	--sk-transition: all 500ms ease-out;
+	--sk-transition-duration: 500ms;
+	--sk-transition-curve: ease-out;
+	--sk-bg-gray: #f5f5f6;
+	--sk-very-light-gray: #d5d5d5;
+	--sk-very-light-gray-faded: rgba(213, 213, 213, 0.15);
+	--sk-green: #087f23;
+	--sk-purple: #673ab7;
+	--sk-purple-faded: rgba(154, 103, 234, 0.15);
+	--less-opacity: calc(1 - var(--opacity) / 2);  
+}
+
+html, html * {
+	box-sizing: border-box;
+}
+  
+html {
+	width: 100%;
+	height: 100%;
+}
+  
+body {
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+}

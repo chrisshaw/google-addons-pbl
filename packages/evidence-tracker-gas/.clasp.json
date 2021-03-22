@@ -1,0 +1,16 @@
+{
+    "scriptId": "1Y5cHI717Eulg-DpdXG1vE-MkXY4C6j7i5yY4_THwse6gCSuTKMd4XNRr",
+    "filePushOrder": [
+        "build/constants/constants.ts",
+        "build/constants/customerSettings.ts",
+        "build/utilities/polyfills.ts",
+        "build/utilities/general.ts",
+        "build/utilities/gas-apis.ts",
+        "build/utilities/functional-programming.ts",
+        "build/connectors/g-suite.ts",
+        "build/sourcers/folder.ts",
+        "build/finders/g-suite-drive.ts",
+        "build/storers/storyboard.ts",
+        "build/main.ts"
+    ]    
+}

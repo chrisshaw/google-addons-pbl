@@ -1,0 +1,2 @@
+function buildScoreSheet(rubricSs, summary) {
+}

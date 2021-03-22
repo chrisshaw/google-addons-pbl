@@ -1,0 +1,19 @@
+{
+  "name": "pbl-evidence-tracker",
+  "version": "0.0.1",
+  "description": "Check a doc for a certain thing",
+  "main": "main.gs",
+  "scripts": {
+    "build-gas-utils": "cd ../utilities-gas && npm run build-dev && cp -R build ../evidence-tracker-gas/build/utilities-gas",
+    "build-ts-utils": "cd ../utilities-ts && npm run build && cp -R build ../evidence-tracker-gas/build/utilities-ts",
+    "build-utils": "npm run build-gas-utils && npm run build-ts-utils",
+    "build": "rm -rf build && mkdir build && npm run build-utils && cp -r src/** build",
+    "push": "npx clasp push",
+    "deploy": "npm run build && npm run push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Shaw",
+  "dependencies": {
+    "@types/google-apps-script": "0.0.56"
+  }
+}

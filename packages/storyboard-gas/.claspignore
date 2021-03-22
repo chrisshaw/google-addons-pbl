@@ -1,0 +1,4 @@
+**/**
+!build/**
+!appsscript.json
+!jsconfig.json

@@ -1,0 +1,28 @@
+{
+  "name": "pbl-google-addons",
+  "version": "1.0.0",
+  "description": "Monorepo for Google Classroom and Google Workspace add-ons to support personalized, project-based learning",
+  "workspaces": [
+    "./packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisshaw/google-addons-pbl.git"
+  },
+  "keywords": [
+    "google-classroom",
+    "google-workspace",
+    "addons",
+    "education",
+    "edtech"
+  ],
+  "author": "Chris Shaw",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/chrisshaw/google-addons-pbl/issues"
+  },
+  "homepage": "https://github.com/chrisshaw/google-addons-pbl#readme"
+}

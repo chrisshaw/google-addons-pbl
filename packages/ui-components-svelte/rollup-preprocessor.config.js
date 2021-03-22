@@ -1,0 +1,50 @@
+const svelte = require('rollup-plugin-svelte');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const livereload = require('rollup-plugin-livereload');
+const terserPlugin = require('rollup-plugin-terser');
+const terser = terserPlugin.terser
+const pkg = require('./package.json');
+
+const production = !process.env.ROLLUP_WATCH;
+const name = pkg.name
+  .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
+  .replace(/^\w/, (m) => m.toUpperCase())
+  .replace(/-\w/g, (m) => m[1].toUpperCase());
+
+module.exports = {
+  input: 'src/components.js',
+  output: [
+        { file: 'dist/index.min.mjs', format: 'es' },
+        { file: 'dist/index.min.js', format: 'umd', name },
+      ],
+  plugins: [
+    svelte({
+      // enable run-time checks when not in production
+      dev: !production,
+      // we'll extract any component CSS out into
+      // a separate file — better for performance
+      css: (css) => {
+        css.write('public/bundle.css');
+      },
+    }),
+
+    // If you have external dependencies installed =
+    // npm, you'll most likely need these plugins. In
+    // some cases you'll need additional configuration —
+    // consult the documentation for details:
+    // https://github.com/rollup/rollup-plugin-commonjs
+    resolve(),
+    commonjs(),
+
+    // Watch the `public` directory and refresh the
+    // browser on changes when not in production
+    !production && livereload('public'),
+
+    // If we're building for production (npm run build
+    // instead of npm run dev), minify
+  ],
+  watch: {
+    clearScreen: false,
+  },
+};
