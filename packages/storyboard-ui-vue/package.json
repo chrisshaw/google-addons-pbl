@@ -11,7 +11,7 @@
     "test-server": "node server.js"
   },
   "dependencies": {
-    "@linusborg/vue-simple-portal": "^0.1.4",
+    "@linusborg/vue-simple-portal": "^0.1.5",
     "material-components-web": "^4.0.0",
     "vue": "^2.6.12",
     "vue-mdc-adapter": "^0.18.2",
