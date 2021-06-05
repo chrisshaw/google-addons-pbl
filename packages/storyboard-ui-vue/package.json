@@ -15,7 +15,7 @@
     "material-components-web": "^4.0.0",
     "vue": "^2.6.12",
     "vue-mdc-adapter": "^0.18.2",
-    "vue-screen": "^1.4.4",
+    "vue-screen": "^1.5.4",
     "vue-virtual-scroll-list": "^1.4.7"
   },
   "devDependencies": {
