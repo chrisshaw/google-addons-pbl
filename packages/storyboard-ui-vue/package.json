@@ -13,7 +13,7 @@
   "dependencies": {
     "@linusborg/vue-simple-portal": "^0.1.5",
     "material-components-web": "^4.0.0",
-    "vue": "^2.6.13",
+    "vue": "^2.6.14",
     "vue-mdc-adapter": "^0.18.2",
     "vue-screen": "^1.5.4",
     "vue-virtual-scroll-list": "^1.4.7"
