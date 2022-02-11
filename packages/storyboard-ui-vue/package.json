@@ -21,7 +21,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.6",
     "@vue/cli-service": "^4.5.6",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prerender-spa-plugin": "^3.2.1",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-prerender-spa": "^1.1.6",
